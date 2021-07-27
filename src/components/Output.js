@@ -8,7 +8,7 @@ const Output = () => {
     const [content, setContent] = useState();
 
     useEffect(() => {
-        if (contentState != "") {
+        if (contentState !== "") {
             setContent(JSON.parse(contentState));
         }
     }, [contentState]);

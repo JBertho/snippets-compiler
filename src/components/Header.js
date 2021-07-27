@@ -16,7 +16,7 @@ const Header = ({setToken}) => {
             <div className={'header'}>
                 <div className={'logo'}>
                     <div className={'title'}>
-                        <img src={"Logo_allonge.png"} height={50} />
+                        <img src={"Logo_allonge.png"} height={50}  alt={"logo"}/>
                         <span>
                             <PowerSettingsNewIcon className={'logout'} onClick={handleLogout} />
                             | {`Hey, ${username}! Amuse-toi 😎`}

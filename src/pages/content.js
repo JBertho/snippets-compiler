@@ -1,5 +1,5 @@
 import React, {Fragment, useEffect, useState} from "react";
-import {useRecoilState, useRecoilValue} from "recoil";
+import {useRecoilState} from "recoil";
 import {CodeAtom} from "../atoms/CodeAtom";
 import CodeEditor from "../components/CodeEditor";
 import Output from "../components/Output";
@@ -17,7 +17,7 @@ const Content = () => {
 
     useEffect(() => {
         async function refreshCodeBlockState() {
-            if(projectString != "") {
+            if(projectString !== "") {
                 const project = JSON.parse(projectString);
                 const response = await getSnippets(token, project.id, null);
 
@@ -51,7 +51,7 @@ const Content = () => {
                 </div>
                 <div className={'output-container'}>
                     {
-                        codeBlocks.length != 0 &&
+                        codeBlocks.length !== 0 &&
                         <Output />
                     }
                 </div>

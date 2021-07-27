@@ -36,7 +36,7 @@ const CodeEditor = ({key, code}) => {
     useEffect(() => {
 
         function initMode() {
-            if (projectState != "") {
+            if (projectState !== "") {
                 const project = JSON.parse(projectState);
                 switch (project.language) {
                     case "C":
@@ -88,13 +88,13 @@ const CodeEditor = ({key, code}) => {
     const actionUserName = (username) => {
         const userInfo = localStorage.getItem('userInfo');
         const user = JSON.parse(userInfo);
-        return username == user?.username ? "me" : username;
+        return username === user?.username ? "me" : username;
     }
 
     const randomColor = () => {
         const actionUser = actionUserName(snippet?.updateUserName);
         let color = "";
-        if(actionUser == "me") {
+        if(actionUser === "me") {
             color = "red";
         }else {
             //color = '#'+Math.random().toString(16).slice(-3);
@@ -170,7 +170,7 @@ const CodeEditor = ({key, code}) => {
                 <span className={'code-name'}>
                     <SnippetName name={snippetName} onBlur={handleUpdateSnippetName}/> / {actuallyEdited ?
                     <Fragment>
-                        <b>{userName == "me" ? "I'm" : userName + "'s"}</b> {action}
+                        <b>{userName === "me" ? "I'm" : userName + "'s"}</b> {action}
                     </Fragment> :
                     <Fragment>
                         {action} <b>{userName}</b>

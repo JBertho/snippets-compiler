@@ -1,7 +1,6 @@
-import React, {Fragment, useEffect, useState} from "react";
+import React, {Fragment} from "react";
 import {useRecoilValue} from "recoil";
 import {ProjectAtom} from "../atoms/ProjectAtom";
-import ShareIcon from '@material-ui/icons/Share';
 
 const DisplayProjectName = () => {
 
@@ -9,7 +8,7 @@ const DisplayProjectName = () => {
     let project = "N/D";
     let projectToken = "";
 
-    if (projectString != "") {
+    if (projectString !== "") {
         const projectObject = JSON.parse(projectString);
         project = projectObject.name;
         projectToken = projectObject.token;

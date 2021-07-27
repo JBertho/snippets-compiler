@@ -5,9 +5,9 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import {createProject, getProject, joinProject} from "../services/Project";
+import {getProject, joinProject} from "../services/Project";
 import useToken from "./useToken";
-import {useRecoilState, useSetRecoilState} from "recoil";
+import {useSetRecoilState} from "recoil";
 import {ProjectAtom} from "../atoms/ProjectAtom";
 import {CodeAtom} from "../atoms/CodeAtom";
 import {getSnippets} from "../services/Snippets";
@@ -86,7 +86,7 @@ const JoinProjectDialog = ({open, handleClose}) => {
                     onChange={handleProjectTokenChange}
                 />
                 {
-                    errorMsg != "" &&
+                    errorMsg !== "" &&
                     <p>{errorMsg}</p>
                 }
             </DialogContent>

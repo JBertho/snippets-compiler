@@ -1,16 +1,16 @@
-import React, {Fragment, useState} from "react";
-import {useRecoilState, useRecoilValue} from "recoil";
+import React, {Fragment} from "react";
+import {useRecoilState} from "recoil";
 import {CodeAtom} from "../atoms/CodeAtom";
 import {ProjectAtom} from "../atoms/ProjectAtom";
 import {createSnippet, getSnippets} from "../services/Snippets";
 import useToken from "./useToken";
-import randomWord from 'random-words';
+
 
 const Menu = ({setNewProjectDialogOpen, setOpenProjectDialogOpen, setJoinProjectDialogOpen}) => {
 
     const [project, setProject] = useRecoilState(ProjectAtom);
     const [code, setCode] = useRecoilState(CodeAtom);
-    const {token, setToken} = useToken();
+    const {token} = useToken();
 
     const handleAddBlock = (snippetData) => {
         //Adding new block
@@ -18,7 +18,7 @@ const Menu = ({setNewProjectDialogOpen, setOpenProjectDialogOpen, setJoinProject
     }
 
     const handleNewSnippet = async () => {
-        if (project == "") {
+        if (project === "") {
             setNewProjectDialogOpen(true);
         } else {
             const projectObject = JSON.parse(project);

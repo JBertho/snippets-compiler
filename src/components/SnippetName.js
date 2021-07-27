@@ -8,7 +8,7 @@ const SnippetName = ({name, onBlur}) => {
 
     const handleBlur = () => {
 
-        if (value != "") {
+        if (value !== "") {
             setEdited(false);
             onBlur(value);
             return;

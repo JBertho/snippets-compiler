@@ -35,6 +35,7 @@ const OpenProjectDialog = ({open, handleClose}) => {
         }
 
         getProjectsList();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [open]);
 
     const handleProjectChange = ({target: {value}}) => {
@@ -104,7 +105,7 @@ const OpenProjectDialog = ({open, handleClose}) => {
 
                 </Select>
                 {
-                    errorMsg != "" &&
+                    errorMsg !== "" &&
                     <p>{errorMsg}</p>
                 }
             </DialogContent>

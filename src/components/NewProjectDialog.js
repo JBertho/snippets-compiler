@@ -9,11 +9,11 @@ import {createProject, getProject, joinProject} from "../services/Project";
 import useToken from "./useToken";
 import {useRecoilState} from "recoil";
 import {ProjectAtom} from "../atoms/ProjectAtom";
-import {InputLabel, MenuItem, Select} from "@material-ui/core";
+import { MenuItem, Select} from "@material-ui/core";
 
 const NewProjectDialog = ({open, handleClose}) => {
 
-    const [projectState, setProjectState] = useRecoilState(ProjectAtom);
+    const [setProjectState] = useRecoilState(ProjectAtom);
     const [projectName, setProjectName] = useState("");
     const [languageSelected, setLanguageSelected] = useState("");
     const [error, setError] = useState(false);
@@ -105,7 +105,7 @@ const NewProjectDialog = ({open, handleClose}) => {
                     <MenuItem value={"JAVA"}>Java</MenuItem>
                 </Select>
                 {
-                    errorMsg != "" &&
+                    errorMsg !== "" &&
                     <p style={{color: "red", fontStyle: "italic"}}>{errorMsg}</p>
                 }
             </DialogContent>
